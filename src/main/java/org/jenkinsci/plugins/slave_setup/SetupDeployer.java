@@ -123,7 +123,7 @@ public class SetupDeployer {
         //Label l = Jenkins.getInstance().getLabel(setupConfigItem.getAssignedLabelString());
         Label label = Label.get(assignedLabel);
 
-        return label.contains(c.getNode());
+        return label.matches(c.getNode());
     }
 
     private void executeScript(Node node, FilePath root, TaskListener listener, String cmdLine, EnvVars additionalEnvironment) throws IOException, InterruptedException {
